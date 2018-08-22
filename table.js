@@ -21,8 +21,8 @@ tables = {
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
     ]
 }
-day = process.argv[2]
-time = process.argv[3]
+day = parseInt(process.argv[2])
+time = parseInt(process.argv[3])
 if (typeof (day) != 'number' || typeof (time) != 'number' || day > 5 || day < 1 || time < 1 || time > 10 || process.argv.length != 4) {
     console.log("Input Format")
     console.log("node table.js <day> <time>")
@@ -45,6 +45,8 @@ if (typeof (day) != 'number' || typeof (time) != 'number' || day > 5 || day < 1 
     console.log("   10: 5:35-6:30")
     process.exit(1)
 }
+day--
+time--
 
 for (table in tables) {
     if (tables[table][day][time] === 1) {
