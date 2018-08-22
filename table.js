@@ -23,7 +23,7 @@ tables = {
 }
 day = process.argv[2]
 time = process.argv[3]
-if (typeof (day) != 'number' || typeof (time) != 'number' || day > 5 || day < 1 || time < 1 || time > 10) {
+if (typeof (day) != 'number' || typeof (time) != 'number' || day > 5 || day < 1 || time < 1 || time > 10 || process.argv.length != 4) {
     console.log("Input Format")
     console.log("node table.js <day> <time>")
     console.log("day:")
@@ -43,6 +43,7 @@ if (typeof (day) != 'number' || typeof (time) != 'number' || day > 5 || day < 1 
     console.log("   8: 3:35-4:30")
     console.log("   9: 4:40-5:35")
     console.log("   10: 5:35-6:30")
+    process.exit(1)
 }
 
 for (table in tables) {
